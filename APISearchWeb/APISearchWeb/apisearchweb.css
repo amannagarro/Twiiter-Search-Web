@@ -1,0 +1,35 @@
+td {
+  padding: 4px;
+} 
+.tweet {
+  vertical-align: top;
+}
+.icon {
+  vertical-align: text-top;
+}
+input[type = text] {
+  border: 1px solid black;
+  width: 30%;
+  margin: 4px;
+  padding:4px;          
+}
+input[type = submit] {
+  border: 1px solid white;
+  -webkit-box-shadow:0 0 4px #333333;
+  box-shadow:0 0 4px #333333;
+  width:30%;
+  padding:2px;
+  margin: 4px;
+}
+h1 {
+  font-size: 1.0em;
+  padding: 4px;
+}
+body {
+  font-family: Arial,sans-serif;
+  background-color: rgb(252, 151, 120);
+}
+label
+{
+  font-size:xx-small;
+}

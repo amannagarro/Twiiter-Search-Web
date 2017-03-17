@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Search</title>
+    <link rel="stylesheet" href="apisearchweb.css" type="text/css" />
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="apisearch.js" type="text/javascript"></script>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  </head>
+  <body>
+    <h1>APISearch</h1>
+    <div id="searchForm">
+      <form onsubmit="redirectToSearchResult(); return false;">
+        <input type="text" id="keywordTextbox"/>
+        <br/>
+        <input type="submit" value="Search" id="searchButton"/>
+      </form>
+    </div>
+
+    <div >
+      <form onsubmit="sendMsg(); return false;">
+        <input type="text"/>
+        <br/>
+        <input type="submit" value="Send Message"/>
+      </form>
+    </div>
+    <div id="flight" class="flight"></div>
+    <div class="runway">
+    </div>
+
+    <div>
+      <button onclick="simulate()">TAKE OFF</button>
+    </div>
+  </body>
+</html>
+
+<script>
+
+    $( document ).ready(function() {
+        simulate();
+    });
+    function simulate(){
+        $("#flight").addClass("run");
+        setTimeout(function(){
+            $("#flight").removeClass("run");
+        },10000)
+    }
+</script>
+
+<style class="cp-pen-styles">
+  body {
+     background: #232B2F;
+  }
+  .flight {
+    width: 200px;
+    height: 100px;
+    background: url("http://cdn.1001freedownloads.com/vector/thumb/84314/airliner.png") center no-repeat;
+    background-size: 100%;
+    position: fixed;
+    bottom: -8px;
+    right: 0;
+  }
+  .flight.run {
+    animation: landFlight linear 5s;
+  }
+
+  .runway {
+    width: 95%;
+    height: 1px;
+    border-top: 1px dotted #eee;
+    background: #333;
+    position: fixed;
+    bottom: 5px;
+    right: 0;
+  }
+  .runway .runwayNo {
+    position: absolute;
+    border: 1px dotted #eee;
+    width: 50px;
+    color: #fff;
+    bottom: 23px;
+    left: -30px;
+    text-align: center;
+    padding: 5px 0;
+  }
+  .runway .runwayNo:after {
+    position: absolute;
+    height: 20px;
+    width: 10px;
+    border: 1px dotted #fff;
+    content: '';
+    bottom: -23px;
+    left: 18px;
+  }
+
+  @keyframes landFlight {
+    0% {
+      -ms-transform: translate(0, 0) rotate(0deg);
+      -moz-transform: translate(0, 0) rotate(0deg);
+      -webkit-transform: translate(0, 0) rotate(0deg);
+      transform: translate(0, 0) rotate(0deg);
+    }
+    20% {
+      -ms-transform: translate(-400px, -1px) rotate(0deg);
+      -moz-transform: translate(-400px, -1px) rotate(0deg);
+      -webkit-transform: translate(-400px, -1px) rotate(0deg);
+      transform: translate(-400px, -1px) rotate(0deg);
+    }
+    30% {
+      -ms-transform: translate(-450px, -2px) rotate(0deg);
+      -moz-transform: translate(-450px, -2px) rotate(0deg);
+      -webkit-transform: translate(-450px, -2px) rotate(0deg);
+      transform: translate(-450px, -2px) rotate(0deg);
+    }
+    38% {
+      -ms-transform: translate(-500px, -5px) rotate(10deg);
+      -moz-transform: translate(-500px, -5px) rotate(10deg);
+      -webkit-transform: translate(-500px, -5px) rotate(10deg);
+      transform: translate(-500px, -5px) rotate(10deg);
+    }
+    39% {
+      -ms-transform: translate(-510px, -10px) rotate(15deg);
+      -moz-transform: translate(-510px, -10px) rotate(15deg);
+      -webkit-transform: translate(-510px, -10px) rotate(15deg);
+      transform: translate(-510px, -10px) rotate(15deg);
+    }
+    40% {
+      -ms-transform: translate(-520px, -12px) rotate(20deg);
+      -moz-transform: translate(-520px, -12px) rotate(20deg);
+      -webkit-transform: translate(-520px, -12px) rotate(20deg);
+      transform: translate(-520px, -12px) rotate(20deg);
+    }
+    50% {
+      -ms-transform: translate(-600px, -50px) rotate(20deg);
+      -moz-transform: translate(-600px, -50px) rotate(20deg);
+      -webkit-transform: translate(-600px, -50px) rotate(20deg);
+      transform: translate(-600px, -50px) rotate(20deg);
+    }
+    60% {
+      -ms-transform: translate(-700px, -100px) rotate(20deg);
+      -moz-transform: translate(-700px, -100px) rotate(20deg);
+      -webkit-transform: translate(-700px, -100px) rotate(20deg);
+      transform: translate(-700px, -100px) rotate(20deg);
+    }
+    100% {
+      -ms-transform: translate(-2000px, -750px) rotate(20deg);
+      -moz-transform: translate(-2000px, -750px) rotate(20deg);
+      -webkit-transform: translate(-2000px, -750px) rotate(20deg);
+      transform: translate(-2000px, -750px) rotate(20deg);
+    }
+  }
+  .controls button {
+    border: 0;
+    outline: 0;
+    color: #000;
+    background: lightskyblue;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+</style>
